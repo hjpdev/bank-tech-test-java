@@ -11,8 +11,6 @@ First ever project in Java.
 
 ```
   git clone https://github.com/hjpugh/bank-tech-test-java.git
-  bundle install
-
 ```
 
 ## User Stories

@@ -26,13 +26,13 @@ public class AccountTest {
   }
 
   @Test
-  public void depositTest() {
+  public void depositIncreasesBalance() {
     account.deposit(10.00);
     assertTrue(account.currentBalance() == 10.00);
   }
 
   @Test
-  public void withdrawTest() {
+  public void withdrawReducesBalance() {
     account.deposit(10.00);
     account.withdraw(5.50);
     assertTrue(account.currentBalance() == 4.50);
