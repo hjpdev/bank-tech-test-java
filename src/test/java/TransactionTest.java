@@ -23,9 +23,10 @@ public class TransactionTest {
 
   @Test
   public void hasTheRightDateAndFormat() {
+    Date date = new Date();
     Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
     String strDate = dateFormatter.format(date);
-    assertEquals(strdate, transaction.date);
+    assertEquals(strDate, transaction.date);
   }
 
   @Test
@@ -35,6 +36,6 @@ public class TransactionTest {
 
   @Test
   public void hasTheRightBalanceAndFormat() {
-    asertEquals("10.95", transaction.balance);
+    assertEquals("10.95", transaction.balance);
   }
 }
