@@ -9,7 +9,6 @@ import static org.junit.Assert.assertEquals;
 import java.text.SimpleDateFormat;
 import java.text.Format;
 import java.util.Date;
-import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class TransactionTest {

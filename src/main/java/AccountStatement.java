@@ -16,16 +16,8 @@ class AccountStatement {
     return log;
   }
 
-  public void addTransaction(Date date, double amount, double balance) {
-    Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
-    String strDate = dateFormatter.format(date);
-    String strAmount = String.valueOf(amount);
-    String strBalance = String.valueOf(balance);
-    Hashtable<String, String> transaction = new Hashtable<>();
-    transaction.put("date", strDate);
-    transaction.put("amount", strAmount);
-    transaction.put("balance", strBalance);
-    log.add(transaction);
+  public void addTransaction(Transaction transaction) {
+    log.add(transaction.info);
   }
 
 }

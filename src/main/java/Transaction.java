@@ -2,7 +2,6 @@
 import java.text.SimpleDateFormat;
 import java.text.Format;
 import java.util.Date;
-import java.util.ArrayList;
 import java.util.Hashtable;
 
 class Transaction {
