@@ -26,6 +26,11 @@ public class AccountTest {
   }
 
   @Test
+  public void accountStatementTest() {
+    assertTrue(account.log instanceof AccountStatement);
+  }
+
+  @Test
   public void depositIncreasesBalance() {
     account.deposit(10.00);
     assertTrue(account.currentBalance() == 10.00);
