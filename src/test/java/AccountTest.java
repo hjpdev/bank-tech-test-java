@@ -31,6 +31,7 @@ public class AccountTest {
     assertTrue(account.currentBalance() == 10.00);
   }
 
+  @Test
   public void withdrawTest() {
     account.deposit(10.00);
     account.withdraw(5.50);
