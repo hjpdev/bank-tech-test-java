@@ -39,21 +39,6 @@ public class AccountTest {
   }
 
   @Test
-  public void depositAddsTransactionToStatement() {
-    Date date = new Date();
-    Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
-    String formattedDate = dateFormatter.format(date);
-    AccountStatement testLog = new AccountStatement();
-    Hashtable<String, String> testTrans = new Hashtable<>();
-    testTrans.put("date", formattedDate);
-    testTrans.put("amount", "10.0");
-    testTrans.put("balance", "10.0");
-    testLog.add(testTrans);
-    account.deposit(10.00);
-    assertTrue(account.returnStatement() == testLog);
-  }
-
-  @Test
   public void withdrawReducesBalance() {
     account.deposit(10.00);
     account.withdraw(5.50);
