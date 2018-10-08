@@ -9,4 +9,8 @@ class Account {
   public double currentBalance() {
     return balance;
   }
+
+  public void deposit(double amount) {
+    balance += amount;
+  }
 }
