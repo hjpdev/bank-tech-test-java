@@ -27,4 +27,8 @@ First ever project in Java.
   As a customer,
   so I can spend my money,
   I want to be able to make withdrawals.
+
+  As a customer,
+  so I can see previous transactions,
+  I want to be able to view my statement.
 ```
