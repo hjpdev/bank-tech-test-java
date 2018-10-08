@@ -18,7 +18,7 @@ public class AccountTest {
   }
 
   @Test
-  public void simpleTest() {
-    assertEquals("Hello, world", account.helloWorld());
+  public void zeroBalanceTest() {
+    assertTrue(account.currentBalance() == 0.00);
   }
 }

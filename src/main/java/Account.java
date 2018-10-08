@@ -1,6 +1,12 @@
 class Account {
 
-  String helloWorld() {
-    return "Hello, world";
+  private double balance;
+
+  public Account() {
+    double balance = 0.00;
+  }
+
+  public double currentBalance() {
+    return balance;
   }
 }
