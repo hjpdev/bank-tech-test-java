@@ -38,4 +38,16 @@ public class TransactionTest {
   public void hasTheRightBalanceAndFormat() {
     assertEquals("10.95", transaction.balance);
   }
+
+  @Test
+  public void addsAllInfoToAnInfoVariable() {
+    Hashtable mockInfo = new Hashtable();
+    Date date = new Date();
+    Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
+    String strDate = dateFormatter.format(date);
+    mockInfo.put("date", strDate);
+    mockInfo.put("amount", "10.95");
+    mockInfo.put("balance", "10.95");
+    assertEquals(mockInfo, transaction.info);
+  }
 }
