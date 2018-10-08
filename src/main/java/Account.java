@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-class Account {
+public class Account {
 
   private double balance;
   private AccountStatement statement;
