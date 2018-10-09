@@ -16,6 +16,8 @@ Make sure you have Java SE downloaded, which can be found [here](https://www.ora
   jshell> Account account = new Account();
 ```
 
+You will then be able to interact with 'account' using the methods found in src/main/java.Account.java
+
 ## User Stories
 
 ```
