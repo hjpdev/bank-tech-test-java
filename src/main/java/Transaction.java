@@ -3,7 +3,6 @@ package main.java;
 import java.text.SimpleDateFormat;
 import java.text.Format;
 import java.util.Date;
-import java.util.Hashtable;
 
 public class Transaction {
   public String date;
