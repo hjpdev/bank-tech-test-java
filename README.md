@@ -35,6 +35,8 @@ To interact:
   /exit
 ```
 
+These are the main methods for interacting with the Account class, further info can be found in src/main/java.Account.java
+
 To run the tests:
 
 (In the command line:)
@@ -42,8 +44,6 @@ To run the tests:
 ```
 gradle cleanTest test
 ```
-
-These are the main methods for interacting with the Account class, further info can be found in src/main/java.Account.java
 
 ## User Stories
 
