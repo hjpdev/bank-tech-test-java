@@ -7,17 +7,21 @@ First ever project in Java.
 
 ## How to Use
 
-Make sure you have Java SE downloaded (& Java 9 or above required), which can be found [here](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+Make sure you have Java SE downloaded (& Java 9 or above also required), which can be found [here](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 ```
   git clone https://github.com/hjpugh/bank-tech-test-java.git
   jshell --class-path D:/bank-tech-test-java/src/bin
+
   Then, within JShell:
+
   import main.java.Account;
   Account account = new Account();
   account.deposit(100.50);
   account.withdraw(50.25);
-  And then, to print the statement:
+
+  And to print the statement:
+
   account.returnStatement().printStatement();
 ```
 
