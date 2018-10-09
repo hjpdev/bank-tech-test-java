@@ -23,8 +23,10 @@ public class AccountStatement {
   }
 
   public String printStatement() {
-    String result = "date || credit || debit || balance" + "\n";
+    String result = "date || credit || debit || balance\n";
+    for (int i = log.size() - 1; i >= 0 ; i--) {
+      result += log.get(i);
+    }
     return result;
   }
-
 }

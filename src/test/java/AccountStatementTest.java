@@ -35,14 +35,14 @@ public class AccountStatementTest {
     Date date = new Date();
     Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
     String strDate = dateFormatter.format(date);
-    Transaction transaction1 = new Transaction(new Date(), 1000.00, 1000.00);
+    Transaction transaction1 = new Transaction(new Date(), 1000.11, 1000.11);
     accountStatement.addTransaction(transaction1);
-    Transaction transaction2 = new Transaction(new Date(), 2000.00, 3000.00);
+    Transaction transaction2 = new Transaction(new Date(), 2000.11, 3000.22);
     accountStatement.addTransaction(transaction2);
-    Transaction transaction3 = new Transaction(new Date(), -500.00, 2500.00);
+    Transaction transaction3 = new Transaction(new Date(), -500.11, 2500.11);
     accountStatement.addTransaction(transaction3);
     assertEquals(accountStatement.printStatement(),
-        "date || credit || debit || balance\n" + "14/01/2012 || || 500.00 || 2500.00\n"
-            + "13/01/2012 || 2000.00 || || 3000.00\n" + "10/01/2012 || 1000.00 || || 1000.00\n");
+        "date || credit || debit || balance\n" + strDate + " || || 500.11 || 2500.11\n" + strDate
+            + " || 2000.11 || || 3000.22\n" + strDate + " || 1000.11 || || 1000.11\n");
   }
 }
