@@ -23,7 +23,6 @@ import main.java.AccountStatement;
 public class AccountTest {
 
   private Account account;
-  private AccountStatement accountStatement;
 
   @Before
   public void setup() {
@@ -42,9 +41,29 @@ public class AccountTest {
   }
 
   @Test
+  public void depositAddsInfoToStatement() {
+    Date date = new Date();
+    Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
+    String strDate = dateFormatter.format(date);
+    account.deposit(10.25);
+    assertEquals(account.returnStatement().printStatement(),
+        "date || credit || debit || balance\n" + strDate + " || 10.25 || || 10.25\n");
+  }
+
+  @Test
   public void withdrawReducesBalance() {
     account.deposit(10.00);
     account.withdraw(5.50);
     assertTrue(account.currentBalance() == 4.50);
+  }
+
+  @Test
+  public void withdrawAddsInfoToStatement() {
+    Date date = new Date();
+    Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
+    String strDate = dateFormatter.format(date);
+    account.withdraw(10.25);
+    assertEquals(account.returnStatement().printStatement(),
+        "date || credit || debit || balance\n" + strDate + " || || 10.25 || -10.25\n");
   }
 }
