@@ -9,19 +9,25 @@ public class Transaction {
   public String date;
   public String amount;
   public String balance;
-  public Hashtable<String, String> info = new Hashtable<>();
+  public String info;
 
   public Transaction(Date inputDate, double inputAmount, double inputBalance) {
     Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
     date = dateFormatter.format(inputDate);
     amount = String.valueOf(inputAmount);
     balance = String.valueOf(inputBalance);
-    addInfo();
+    if (inputAmount >= 0) {
+      addInfoCredit();
+    } else {
+      addInfoDebit();
+    }
   }
 
-  private void addInfo() {
-    info.put("date", date);
-    info.put("amount", amount);
-    info.put("balance", balance);
+  private void addInfoCredit() {
+    info = date + " || " + amount + " || || " + balance + "\n";
+  }
+
+  private void addInfoDebit() {
+    info = date + " || || " + amount.substring(1) + " || " + balance + "\n";
   }
 }

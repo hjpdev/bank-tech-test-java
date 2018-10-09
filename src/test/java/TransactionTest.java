@@ -46,8 +46,7 @@ public class TransactionTest {
     Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
     String strDate = dateFormatter.format(date);
     Transaction mockTrans = new Transaction(date, 100.23, 100.23);
-    assertEquals(("date || credit || debit || balance" + "\n" + strDate + " || 100.23 || || 100.23 \n"),
-        mockTrans.info);
+    assertEquals((strDate + " || 100.23 || || 100.23\n"), mockTrans.info);
   }
 
   @Test
@@ -56,7 +55,6 @@ public class TransactionTest {
     Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
     String strDate = dateFormatter.format(date);
     Transaction mockTrans = new Transaction(date, -230.24, 500.45);
-    assertEquals(("date || credit || debit || balance" + "\n" + strDate + " || || 230.24 || 500.45 \n"),
-        mockTrans.info);
+    assertEquals((strDate + " || || 230.24 || 500.45\n"), mockTrans.info);
   }
 }

@@ -8,7 +8,7 @@ import java.util.Hashtable;
 
 public class AccountStatement {
 
-  private ArrayList<Hashtable<String, String>> log = new ArrayList<Hashtable<String, String>>();
+  private ArrayList log = new ArrayList<>();
 
   public AccountStatement() {
     ArrayList log[];
