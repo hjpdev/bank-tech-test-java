@@ -22,4 +22,9 @@ public class AccountStatement {
     log.add(transaction.info);
   }
 
+  public String printStatement() {
+    String result = "date || credit || debit || balance" + "\n";
+    return result;
+  }
+
 }

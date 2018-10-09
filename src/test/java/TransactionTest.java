@@ -41,14 +41,22 @@ public class TransactionTest {
   }
 
   @Test
-  public void addsAllInfoToAnInfoVariable() {
-    Hashtable mockInfo = new Hashtable();
+  public void addInfoCredit() {
     Date date = new Date();
     Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
     String strDate = dateFormatter.format(date);
-    mockInfo.put("date", strDate);
-    mockInfo.put("amount", "10.95");
-    mockInfo.put("balance", "10.95");
-    assertEquals(mockInfo, transaction.info);
+    Transaction mockTrans = new Transaction(date, 100.23, 100.23);
+    assertEquals(("date || credit || debit || balance" + "\n" + strDate + " || 100.23 || || 100.23 \n"),
+        mockTrans.info);
+  }
+
+  @Test
+  public void addInfoDebit() {
+    Date date = new Date();
+    Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
+    String strDate = dateFormatter.format(date);
+    Transaction mockTrans = new Transaction(date, -230.24, 500.45);
+    assertEquals(("date || credit || debit || balance" + "\n" + strDate + " || || 230.24 || 500.45 \n"),
+        mockTrans.info);
   }
 }
