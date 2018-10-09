@@ -5,9 +5,9 @@ Makers week 10 tech test
 Simple project intended to emulate the fucntionality of a bank account.
 First ever project in Java.
 
-- Installed JDK/Java SE for development.
-
 ## How to Use
+
+Make sure you have Java SE downloaded, which can be found [here](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 ```
   git clone https://github.com/hjpugh/bank-tech-test-java.git
