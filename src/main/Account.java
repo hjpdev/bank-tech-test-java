@@ -5,6 +5,11 @@ public class Account {
   private double balance;
   private AccountStatement statement;
 
+  public static void main(String[] args) {
+    System.out.println("Welcome...");
+    account = new Account();
+  }
+
   public Account() {
     double balance = 0.00;
     AccountStatement statement = new AccountStatement();
