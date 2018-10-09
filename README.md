@@ -2,8 +2,8 @@
 
 Makers week 10 tech test
 
-Simple project intended to emulate the fucntionality of a bank account.
-First ever project in Java.
+Simple project intended to emulate the basic functionality of a bank account.
+First ever project done in Java.
 
 ## How to Use
 
@@ -23,6 +23,10 @@ Make sure you have Java SE downloaded (& Java 9 or above also required), which c
   And to print the statement:
 
   account.returnStatement().printStatement();
+
+  Finally, to exit JShell:
+
+  /exit
 ```
 
 These are the main methods for interacting with the Account class, further info can be found in src/main/java.Account.java
