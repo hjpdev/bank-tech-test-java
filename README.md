@@ -11,14 +11,16 @@ Make sure you have Java SE downloaded (& Java 9 or above also required), which c
 
 To interact:
 
-```
-  In the command line:
+(In the command line:)
 
+```
   git clone https://github.com/hjpugh/bank-tech-test-java.git
   jshell --class-path D:/bank-tech-test-java/src/bin
+```
 
-  Then, within JShell:
+(Then, within JShell:)
 
+```
   import main.java.Account;
   Account account = new Account();
   account.deposit(100.50);
@@ -35,9 +37,9 @@ To interact:
 
 To run the tests:
 
-```
-In the command line:
+(In the command line:)
 
+```
 gradle cleanTest test
 ```
 
