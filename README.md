@@ -11,6 +11,9 @@ First ever project in Java.
 
 ```
   git clone https://github.com/hjpugh/bank-tech-test-java.git
+  jshell --class-path /Users/harryjames/Documents/MA/techTests/bank-tech-test-java/src/bin
+  jshell> import main.java.Account;
+  jshell> Account account = new Account();
 ```
 
 ## User Stories

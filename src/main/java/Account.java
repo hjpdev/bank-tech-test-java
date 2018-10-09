@@ -1,3 +1,5 @@
+package main.java;
+
 import java.util.ArrayList;
 
 public class Account {
@@ -7,7 +9,6 @@ public class Account {
 
   public static void main(String[] args) {
     System.out.println("Welcome...");
-    account = new Account();
   }
 
   public Account() {
