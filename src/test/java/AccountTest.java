@@ -17,6 +17,9 @@ import java.util.Date;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
+import main.java.Account;
+import main.java.AccountStatement;
+
 public class AccountTest {
 
   private Account account;

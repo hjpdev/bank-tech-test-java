@@ -11,6 +11,8 @@ import java.text.Format;
 import java.util.Date;
 import java.util.Hashtable;
 
+import main.java.Transaction;
+
 public class TransactionTest {
   private Transaction transaction;
 

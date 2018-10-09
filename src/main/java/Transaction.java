@@ -5,13 +5,13 @@ import java.text.Format;
 import java.util.Date;
 import java.util.Hashtable;
 
-class Transaction {
+public class Transaction {
   public String date;
   public String amount;
   public String balance;
   public Hashtable<String, String> info = new Hashtable<>();
 
-  Transaction(Date inputDate, double inputAmount, double inputBalance) {
+  public Transaction(Date inputDate, double inputAmount, double inputBalance) {
     Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
     date = dateFormatter.format(inputDate);
     amount = String.valueOf(inputAmount);

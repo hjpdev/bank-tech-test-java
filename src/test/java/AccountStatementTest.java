@@ -9,6 +9,9 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Date;
 
+import main.java.AccountStatement;
+import main.java.Transaction;
+
 public class AccountStatementTest {
 
   private AccountStatement accountStatement;

@@ -6,11 +6,11 @@ import java.util.Date;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-class AccountStatement {
+public class AccountStatement {
 
   private ArrayList<Hashtable<String, String>> log = new ArrayList<Hashtable<String, String>>();
 
-  AccountStatement() {
+  public AccountStatement() {
     ArrayList log[];
   }
 
