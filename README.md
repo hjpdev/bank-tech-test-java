@@ -9,7 +9,11 @@ First ever project done in Java.
 
 Make sure you have Java SE downloaded (& Java 9 or above also required), which can be found [here](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
+To interact:
+
 ```
+  In the command line:
+
   git clone https://github.com/hjpugh/bank-tech-test-java.git
   jshell --class-path D:/bank-tech-test-java/src/bin
 
@@ -27,6 +31,14 @@ Make sure you have Java SE downloaded (& Java 9 or above also required), which c
   Finally, to exit JShell:
 
   /exit
+```
+
+To run the tests:
+
+```
+In the command line:
+
+gradle cleanTest test
 ```
 
 These are the main methods for interacting with the Account class, further info can be found in src/main/java.Account.java
