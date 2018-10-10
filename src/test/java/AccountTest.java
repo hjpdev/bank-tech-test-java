@@ -1,19 +1,15 @@
+import main.java.Account;
+import main.java.AccountStatement;
+
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import com.sun.source.tree.AssertTree;
-
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
 import java.text.SimpleDateFormat;
 import java.text.Format;
 import java.util.Date;
-import java.util.ArrayList;
-import java.util.Hashtable;
-
-import main.java.Account;
-import main.java.AccountStatement;
 
 public class AccountTest {
 
