@@ -29,6 +29,9 @@ To interact:
   And to print the statement:
 
   account.returnStatement().printStatement();
+  ==> "date || credit || debit || balance\n
+      10/10/2018 || || 50.25 || 50.25\n
+      10/10/2018 || 100.5 || || 100.5\n"
 
   Finally, to exit JShell:
 
