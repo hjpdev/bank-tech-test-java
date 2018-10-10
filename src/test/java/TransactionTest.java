@@ -1,31 +1,25 @@
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import main.java.Transaction;
 
+import org.junit.Before;
+import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-import java.text.SimpleDateFormat;
-import java.text.Format;
 import java.util.Date;
-import java.util.Hashtable;
-
-import main.java.Transaction;
+import java.util.GregorianCalendar;
+import java.util.Calendar;
 
 public class TransactionTest {
   private Transaction transaction;
 
   @Before
   public void setup() {
-    Date date = new Date();
+    Date date = new GregorianCalendar(2018, Calendar.FEBRUARY, 11).getTime();
     transaction = new Transaction(date, 10.95, 10.95);
   }
 
   @Test
-  public void hasTheRightDateAndFormat() {
-    Date date = new Date();
-    Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
-    String strDate = dateFormatter.format(date);
-    assertEquals(strDate, transaction.date);
+  public void formatsDateCorrectly() {
+    assertEquals("11/02/2018", transaction.date);
   }
 
   @Test
@@ -40,19 +34,16 @@ public class TransactionTest {
 
   @Test
   public void addInfoCredit() {
-    Date date = new Date();
-    Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
-    String strDate = dateFormatter.format(date);
-    Transaction mockTrans = new Transaction(date, 100.23, 100.23);
-    assertEquals((strDate + " || 100.23 || || 100.23\n"), mockTrans.info);
+    Date date = new GregorianCalendar(2018, Calendar.FEBRUARY, 11).getTime();
+
+    assertEquals(("11/02/2018 || 10.95 || || 10.95\n"), transaction.info);
   }
 
   @Test
   public void addInfoDebit() {
-    Date date = new Date();
-    Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
-    String strDate = dateFormatter.format(date);
+    Date date = new GregorianCalendar(2018, Calendar.FEBRUARY, 11).getTime();
     Transaction mockTrans = new Transaction(date, -230.24, 500.45);
-    assertEquals((strDate + " || || 230.24 || 500.45\n"), mockTrans.info);
+
+    assertEquals(("11/02/2018 || || 230.24 || 500.45\n"), mockTrans.info);
   }
 }
