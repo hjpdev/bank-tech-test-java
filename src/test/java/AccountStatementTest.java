@@ -1,16 +1,14 @@
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
-import com.sun.source.tree.AssertTree;
-
-import static org.junit.Assert.assertEquals;
-
-import java.text.SimpleDateFormat;
-import java.text.Format;
-import java.util.Date;
-
 import main.java.AccountStatement;
 import main.java.Transaction;
+
+import org.junit.Before;
+import org.junit.Test;
+import com.sun.source.tree.AssertTree;
+import static org.junit.Assert.assertEquals;
+
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Calendar;
 
 public class AccountStatementTest {
 
@@ -32,19 +30,17 @@ public class AccountStatementTest {
 
   @Test
   public void printStatementFormatsInfoCorrectly() {
-    Date date = new Date();
-    Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
-    String strDate = dateFormatter.format(date);
-    Transaction transaction1 = new Transaction(new Date(), 1000.11, 1000.11);
-    Transaction transaction2 = new Transaction(new Date(), 2000.11, 3000.22);
-    Transaction transaction3 = new Transaction(new Date(), -500.11, 2500.11);
+    Date date = new GregorianCalendar(2018, Calendar.FEBRUARY, 11).getTime();
+    Transaction transaction1 = new Transaction(date, 1000.11, 1000.11);
+    Transaction transaction2 = new Transaction(date, 2000.11, 3000.22);
+    Transaction transaction3 = new Transaction(date, -500.11, 2500.11);
 
     accountStatement.addTransaction(transaction1);
     accountStatement.addTransaction(transaction2);
     accountStatement.addTransaction(transaction3);
 
     assertEquals(accountStatement.printStatement(),
-        "date || credit || debit || balance\n" + strDate + " || || 500.11 || 2500.11\n" + strDate
-            + " || 2000.11 || || 3000.22\n" + strDate + " || 1000.11 || || 1000.11\n");
+        "date || credit || debit || balance\n11/02/2018 || || 500.11 || 2500.11\n"
+            + "11/02/2018 || 2000.11 || || 3000.22\n11/02/2018 || 1000.11 || || 1000.11\n");
   }
 }
