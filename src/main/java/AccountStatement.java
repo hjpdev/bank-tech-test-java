@@ -1,6 +1,9 @@
 package main.java;
 
 import java.util.ArrayList;
+import java.text.SimpleDateFormat;
+import java.text.Format;
+import java.util.Date;
 
 public class AccountStatement {
 
@@ -14,11 +17,14 @@ public class AccountStatement {
     return log;
   }
 
-  public void addTransaction(String date, double amount, String balance) {
+  public void addTransaction(Date date, double amount, double balance) {
+    Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
+    String strDate = dateFormatter.format(date);
+    String strBalance = String.valueOf(balance);
     if (amount >= 0) {
-      log.add(date + " || " + String.valueOf(amount) + " || || " + balance + "\n");
+      log.add(strDate + " || " + String.valueOf(amount) + " || || " + strBalance + "\n");
     } else {
-      log.add(date + " || || " + String.valueOf(amount).substring(1) + " || " + balance + "\n");
+      log.add(strDate + " || || " + String.valueOf(amount).substring(1) + " || " + strBalance + "\n");
     }
   }
 
