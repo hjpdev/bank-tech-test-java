@@ -23,12 +23,12 @@ public class Account {
   public void deposit(double amount) {
     balance += amount;
     Transaction transInfo = new Transaction(new Date(), amount, balance);
-    statement.addTransaction(transInfo);
+    statement.addTransaction(transInfo.date, transInfo.amount, transInfo.balance);
   }
 
   public void withdraw(double amount) {
     balance -= amount;
     Transaction transInfo = new Transaction(new Date(), -amount, balance);
-    statement.addTransaction(transInfo);
+    statement.addTransaction(transInfo.date, transInfo.amount, transInfo.balance);
   }
 }
