@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="AccountTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2018-10-09T15:11:13" hostname="Harrys-MacBook-Pro-3.local" time="0.027">
+  <properties/>
+  <testcase name="withdrawReducesBalance" classname="AccountTest" time="0.001"/>
+  <testcase name="withdrawAddsInfoToStatement" classname="AccountTest" time="0.021"/>
+  <testcase name="depositIncreasesBalance" classname="AccountTest" time="0.001"/>
+  <testcase name="zeroBalanceTest" classname="AccountTest" time="0.0"/>
+  <testcase name="depositAddsInfoToStatement" classname="AccountTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

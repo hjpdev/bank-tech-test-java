@@ -7,10 +7,6 @@ public class Account {
   private double balance;
   private AccountStatement statement = new AccountStatement();
 
-  public static void main(String[] args) {
-    System.out.println("Welcome...");
-  }
-
   public Account() {
     double balance = 0.00;
     AccountStatement statement = new AccountStatement();
