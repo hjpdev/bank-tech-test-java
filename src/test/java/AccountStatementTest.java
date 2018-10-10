@@ -1,5 +1,4 @@
 import main.java.AccountStatement;
-import main.java.Transaction;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -22,9 +21,8 @@ public class AccountStatementTest {
   @Test
   public void addTransactionAddsDetailsCredit() {
     Date date = new GregorianCalendar(2018, Calendar.FEBRUARY, 11).getTime();
-    Transaction transaction = new Transaction(date, 10.23, 10.23);
 
-    accountStatement.addTransaction(transaction.date, transaction.amount, transaction.balance);
+    accountStatement.addTransaction(date, 10.23, 10.23);
 
     assertEquals("11/02/2018 || 10.23 || || 10.23\n", accountStatement.returnLog().get(0));
   }
@@ -32,9 +30,8 @@ public class AccountStatementTest {
   @Test
   public void addTransactionAddsDetailsDebit() {
     Date date = new GregorianCalendar(2018, Calendar.FEBRUARY, 11).getTime();
-    Transaction transaction = new Transaction(date, -10.23, 10.23);
 
-    accountStatement.addTransaction(transaction.date, transaction.amount, transaction.balance);
+    accountStatement.addTransaction(date, -10.23, 10.23);
 
     assertEquals("11/02/2018 || || 10.23 || 10.23\n", accountStatement.returnLog().get(0));
   }
@@ -42,13 +39,10 @@ public class AccountStatementTest {
   @Test
   public void printStatementFormatsInfoCorrectly() {
     Date date = new GregorianCalendar(2018, Calendar.FEBRUARY, 11).getTime();
-    Transaction t1 = new Transaction(date, 1000.11, 1000.11);
-    Transaction t2 = new Transaction(date, 2000.11, 3000.22);
-    Transaction t3 = new Transaction(date, -500.11, 2500.11);
 
-    accountStatement.addTransaction(t1.date, t1.amount, t1.balance);
-    accountStatement.addTransaction(t2.date, t2.amount, t2.balance);
-    accountStatement.addTransaction(t3.date, t3.amount, t3.balance);
+    accountStatement.addTransaction(date, 1000.11, 1000.11);
+    accountStatement.addTransaction(date, 2000.11, 3000.22);
+    accountStatement.addTransaction(date, -500.11, 2500.11);
 
     assertEquals(accountStatement.printStatement(),
         "date || credit || debit || balance\n11/02/2018 || || 500.11 || 2500.11\n"
