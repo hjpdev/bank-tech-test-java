@@ -15,18 +15,14 @@ public class Transaction {
     date = dateFormatter.format(inputDate);
     amount = String.valueOf(inputAmount);
     balance = String.valueOf(inputBalance);
-    if (inputAmount >= 0) {
-      addInfoCredit();
+    addInfo(inputAmount);
+  }
+
+  private void addInfo(double amount) {
+    if (amount >= 0) {
+      info = date + " || " + String.valueOf(amount) + " || || " + balance + "\n";
     } else {
-      addInfoDebit();
+      info = date + " || || " + String.valueOf(amount).substring(1) + " || " + balance + "\n";
     }
-  }
-
-  private void addInfoCredit() {
-    info = date + " || " + amount + " || || " + balance + "\n";
-  }
-
-  private void addInfoDebit() {
-    info = date + " || || " + amount.substring(1) + " || " + balance + "\n";
   }
 }

@@ -33,14 +33,14 @@ public class TransactionTest {
   }
 
   @Test
-  public void addInfoCredit() {
+  public void addInfoForCredit() {
     Date date = new GregorianCalendar(2018, Calendar.FEBRUARY, 11).getTime();
 
     assertEquals(("11/02/2018 || 10.95 || || 10.95\n"), transaction.info);
   }
 
   @Test
-  public void addInfoDebit() {
+  public void addInfoForDebit() {
     Date date = new GregorianCalendar(2018, Calendar.FEBRUARY, 11).getTime();
     Transaction mockTrans = new Transaction(date, -230.24, 500.45);
 

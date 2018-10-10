@@ -21,11 +21,12 @@ public class AccountStatementTest {
 
   @Test
   public void addTransactionAddsDetails() {
-    Transaction transaction = new Transaction(new Date(), 10.23, 10.23);
+    Date date = new GregorianCalendar(2018, Calendar.FEBRUARY, 11).getTime();
+    Transaction transaction = new Transaction(date, 10.23, 10.23);
 
-    accountStatement.addTransaction(transaction);
+    accountStatement.addTransaction(transaction.date, transaction.amount, transaction.balance);
 
-    assertEquals(transaction.info, accountStatement.returnLog().get(0));
+    assertEquals("11/02/2018 || 10.23 || || 10.23", accountStatement.returnLog().get(0));
   }
 
   @Test
