@@ -34,9 +34,8 @@ public class AccountTest {
 
   @Test
   public void depositAddsInfoToStatement() {
-    Date date = new Date();
     Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
-    String strDate = dateFormatter.format(date);
+    String strDate = dateFormatter.format(new Date());
 
     account.deposit(10.25);
 
@@ -54,9 +53,8 @@ public class AccountTest {
 
   @Test
   public void withdrawAddsInfoToStatement() {
-    Date date = new Date();
     Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
-    String strDate = dateFormatter.format(date);
+    String strDate = dateFormatter.format(new Date());
 
     account.withdraw(10.25);
 
