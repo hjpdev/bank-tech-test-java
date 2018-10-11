@@ -2,6 +2,8 @@ package main.java;
 
 import java.util.Date;
 
+import main.java.CantExceedOverdraftException;
+
 public class Account {
 
   private double balance;
@@ -38,6 +40,9 @@ public class Account {
   }
 
   public void withdraw(double amount) {
+    if (balance - amount < -overdraft) {
+      throw new CantExceedOverdraftException("Can't withdraw over overdraft limit.");
+    }
     balance -= amount;
     statement.addTransaction(new Date(), -amount, balance);
   }

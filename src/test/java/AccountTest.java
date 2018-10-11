@@ -1,4 +1,5 @@
 import main.java.Account;
+import main.java.CantExceedOverdraftException;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -57,11 +58,11 @@ public class AccountTest {
     account.deposit(20.50);
     account.withdraw(10.25);
 
-    assertEquals(account.returnStatement().printStatement(),
-        "date || credit || debit || balance\n" + strDate + " || || 10.25 || 10.25\n");
+    assertEquals(account.returnStatement().printStatement(), "date || credit || debit || balance\n" + strDate
+        + " || || 10.25 || 10.25\n" + strDate + " || 20.5 || || 20.5\n");
   }
 
-  @Test(expected = cantExceedOverdraftException.class)
+  @Test(expected = CantExceedOverdraftException.class)
   public void cannotWithdrawOverODLimit() {
     account.withdraw(5000);
   }
