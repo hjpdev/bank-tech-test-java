@@ -54,10 +54,15 @@ public class AccountTest {
   public void withdrawAddsInfoToStatement() {
     Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
     String strDate = dateFormatter.format(new Date());
-
+    account.deposit(20.50);
     account.withdraw(10.25);
 
     assertEquals(account.returnStatement().printStatement(),
-        "date || credit || debit || balance\n" + strDate + " || || 10.25 || -10.25\n");
+        "date || credit || debit || balance\n" + strDate + " || || 10.25 || 10.25\n");
+  }
+
+  @Test(expected = cantExceedOverdraftException.class)
+  public void cannotWithdrawOverODLimit() {
+    account.withdraw(5000);
   }
 }
