@@ -1,4 +1,5 @@
 import main.java.Account;
+import main.java.AccountStatement;
 import main.java.CantExceedOverdraftException;
 
 import org.junit.Before;
@@ -6,6 +7,7 @@ import org.junit.Test;
 import com.sun.source.tree.AssertTree;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.*;
 
 import java.text.SimpleDateFormat;
 import java.text.Format;
@@ -36,11 +38,13 @@ public class AccountTest {
   public void depositAddsInfoToStatement() {
     Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
     String strDate = dateFormatter.format(new Date());
+    AccountStatement mockAccountStatement = mock(AccountStatement.class);
+    when(mockAccountStatement.printStatement()).thenReturn("Message received by statement");
+    Account testAccount = new Account(0, 0, mockAccountStatement);
 
-    account.deposit(10.25);
+    testAccount.deposit(10.25);
 
-    assertEquals(account.returnStatement().printStatement(),
-        "date || credit || debit || balance\n" + strDate + " || 10.25 || || 10.25\n");
+    assertEquals(testAccount.returnStatement().printStatement(), "Message received by statement");
   }
 
   @Test
@@ -55,11 +59,14 @@ public class AccountTest {
   public void withdrawAddsInfoToStatement() {
     Format dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
     String strDate = dateFormatter.format(new Date());
-    account.deposit(20.50);
-    account.withdraw(10.25);
+    AccountStatement mockAccountStatement = mock(AccountStatement.class);
+    when(mockAccountStatement.printStatement()).thenReturn("Message received by statement");
+    Account testAccount = new Account(0, 0, mockAccountStatement);
 
-    assertEquals(account.returnStatement().printStatement(), "date || credit || debit || balance\n" + strDate
-        + " || || 10.25 || 10.25\n" + strDate + " || 20.5 || || 20.5\n");
+    testAccount.deposit(20.50);
+    testAccount.withdraw(10.25);
+
+    assertEquals(testAccount.returnStatement().printStatement(), "Message received by statement");
   }
 
   @Test(expected = CantExceedOverdraftException.class)
