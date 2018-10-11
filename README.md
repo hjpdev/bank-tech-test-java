@@ -24,18 +24,29 @@ Make sure you have Java SE downloaded (& Java 9 or above also required), which c
 
 To interact:
 
-(In the command line:)
+In the command line:
 
 ```
   git clone https://github.com/hjpugh/bank-tech-test-java.git
   jshell --class-path D:/bank-tech-test-java/src/bin
 ```
 
-(Then, within JShell:)
+Then, within JShell:
 
 ```
   import main.java.Account;
   Account account = new Account();
+```
+This will open a default account, with no initial balance & no overdraft. However, if you want to overriden the defaults:
+
+```
+	import main.java.Account;
+	import main.java.AccountStatement;
+	Account account = new Account(100, 500, new AccountStatement);
+```
+And this would open the account with £100 starting balance, £500 overdraft limit and the default Account Statement class, which could also be overrided if need be.
+
+```
   account.deposit(100.50);
   account.withdraw(50.25);
 
@@ -45,17 +56,18 @@ To interact:
   ==> "date || credit || debit || balance\n
       10/10/2018 || || 50.25 || 50.25\n
       10/10/2018 || 100.5 || || 100.5\n"
+```
+These are the main methods for interacting with the Account class, further info can be found in src/main/java.Account.java
 
-  Finally, to exit JShell:
-
+Finally, to exit JShell:
+  
+```
   /exit
 ```
 
-These are the main methods for interacting with the Account class, further info can be found in src/main/java.Account.java
-
 To run the tests:
 
-(In the command line:)
+In the command line:
 
 ```
 gradle cleanTest test
@@ -75,8 +87,20 @@ gradle cleanTest test
   As a customer,
   so I can spend my money,
   I want to be able to make withdrawals.
+  
+  As a customer,
+  so I can pay for unpredicted expenditures,
+  I want an overdraft to tide me over.
+  
+  As a customer,
+  so I don't exceed my overdraft,
+  I want to be stopped withdrawing over this amount
 
   As a customer,
   so I can see previous transactions,
   I want to be able to view my statement.
+  
+  As a bank,
+  so we can encourage customers to open accounts,
+  we want the ability to open them with money already in.
 ```
