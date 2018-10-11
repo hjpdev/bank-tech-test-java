@@ -12,10 +12,10 @@ Simple project intended to emulate the basic functionality of a bank account, do
 **Then** she would see
 
 ```
-date || credit || debit || balance
-14/01/2012 || || 500.00 || 2500.00
-13/01/2012 || 2000.00 || || 3000.00
-10/01/2012 || 1000.00 || || 1000.00
+  date || credit || debit || balance
+  14/01/2012 || || 500.00 || 2500.00
+  13/01/2012 || 2000.00 || || 3000.00
+  10/01/2012 || 1000.00 || || 1000.00
 ```
 
 ## How to Use
@@ -40,9 +40,9 @@ Then, within JShell:
 This will open a default account, with no initial balance & no overdraft. However, if you want to overriden the defaults:
 
 ```
-	import main.java.Account;
-	import main.java.AccountStatement;
-	Account account = new Account(100, 500, new AccountStatement);
+  import main.java.Account;
+  import main.java.AccountStatement;
+  Account account = new Account(100, 500, new AccountStatement);
 ```
 And this would open the account with £100 starting balance, £500 overdraft limit and the default Account Statement class, which could also be overrided if need be.
 
@@ -70,7 +70,7 @@ To run the tests:
 In the command line:
 
 ```
-gradle cleanTest test
+  gradle cleanTest test
 ```
 
 ## User Stories
